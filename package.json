@@ -1,0 +1,21 @@
+{
+  "name": "augmented-tester-lab",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Hands-on companion repo for the ebook The Augmented Tester: generative AI applied to testing, QA and code review, practised on the twodos app.",
+  "type": "module",
+  "scripts": {
+    "mock": "node mock/server.mjs",
+    "spec:fetch": "node scripts/fetch-openapi.mjs",
+    "test": "playwright test",
+    "test:mock": "node scripts/with-mock.mjs playwright test",
+    "test:repeat": "node scripts/with-mock.mjs playwright test --repeat-each=10",
+    "ch1:check-endpoints": "node chapters/01-gen-ai-in-software-testing/04-hallucination-check/check-endpoints.mjs",
+    "ch1:coverage": "node chapters/01-gen-ai-in-software-testing/02-test-cases-from-a-story/coverage.mjs",
+    "ch1:compare-runs": "node chapters/01-gen-ai-in-software-testing/05-non-determinism/compare-runs.mjs"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.49.1",
+    "dotenv": "16.4.7"
+  }
+}
