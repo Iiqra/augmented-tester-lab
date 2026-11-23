@@ -1,0 +1,15 @@
+# TC01 · AC1 · Add a task with a title; it appears in the list.
+# STATUS: draft, not yet run on a device. Labels come from ../labels.env.
+appId: ${APP_ID}
+tags: [ch1, smoke]
+---
+- launchApp
+- runFlow: subflows/login.yaml
+- runFlow: subflows/open-test-list.yaml
+- runFlow:
+    file: subflows/add-task.yaml
+    env: { TASK: "Lab: buy milk" }
+- assertVisible: "Lab: buy milk"
+- runFlow:
+    file: subflows/cleanup.yaml
+    env: { TASK: "Lab: buy milk" }

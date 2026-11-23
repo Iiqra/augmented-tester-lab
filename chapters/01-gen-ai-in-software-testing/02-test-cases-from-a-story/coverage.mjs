@@ -28,4 +28,6 @@ console.log(`\n${criteria.length} criteria, ${cases.length} cases, ${gaps} uncov
 if (unmapped.length) console.log(`Cases not mapped to any criterion (keep only if they add value): ${unmapped.join(', ')}`);
 if (unknownRefs.length) console.log(`References to criteria that do not exist (possible AI invention): ${unknownRefs.join(', ')}`);
 if (open.length) console.log(`Cases with open questions or assumptions to resolve: ${open.join(', ')}`);
+const auto = cases.filter((t) => t.automated);
+if ('automated' in (cases[0] || {})) console.log(`Automated as Maestro flows: ${auto.length}/${cases.length} (${auto.map((t) => t.id).join(', ')}); manual for now: ${cases.filter((t) => !t.automated).map((t) => t.id).join(', ')}`);
 process.exit(gaps || unknownRefs.length ? 1 : 0);

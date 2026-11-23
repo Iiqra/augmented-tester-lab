@@ -1,0 +1,10 @@
+# Adds one task. Pass TASK through runFlow env.
+appId: ${APP_ID}
+---
+- tapOn: ${LABEL_ADD_TASK}
+- tapOn: ${LABEL_TASK_INPUT}
+- inputText: ${TASK}
+- tapOn: ${LABEL_SAVE_TASK}
+- extendedWaitUntil:
+    visible: ${TASK}
+    timeout: 10000

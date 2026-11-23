@@ -6,6 +6,6 @@ Context: <story, acceptance criteria, business rules, known risks, relevant spec
 Constraints: <platforms, test data rules, tools, what is out of scope>
 Task: <one focused task>
 Output: <exact format>
-Rules: Do not invent features, fields, endpoints or business rules.
+Rules: Do not invent screens, buttons, labels or business rules.
 Mark anything you inferred as ASSUMPTION. List open questions where information is missing.
 ```

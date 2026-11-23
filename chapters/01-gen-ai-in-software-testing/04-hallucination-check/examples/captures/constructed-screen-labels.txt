@@ -1,0 +1,8 @@
+# CONSTRUCTED EXAMPLE: labels of an imaginary to-do screen, used only with the example flow above.
+# Replace with your own capture of twodos in ../../captures/.
+Groceries
+Add
+Clear all completed
+Buy milk
+Lists
+Settings

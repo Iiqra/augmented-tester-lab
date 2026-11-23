@@ -1,0 +1,12 @@
+# CONSTRUCTED EXAMPLE for exercise 04: plausible AI-style flow with invented labels.
+# Written for teaching, not produced by a real tool run, and not part of the suite.
+appId: com.example.todo
+---
+- launchApp
+- tapOn: "Groceries"
+- tapOn: "Add new todo"          # invented
+- inputText: "Buy milk"
+- tapOn: "Add"
+- tapOn: "Mark complete"         # invented
+- assertVisible: "Completed (1)" # invented
+- tapOn: "Clear all completed"

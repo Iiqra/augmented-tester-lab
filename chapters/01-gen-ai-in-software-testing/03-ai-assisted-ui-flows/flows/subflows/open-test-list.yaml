@@ -1,0 +1,6 @@
+appId: ${APP_ID}
+---
+- tapOn: ${TEST_LIST}
+- extendedWaitUntil:
+    visible: ${LABEL_ADD_TASK}
+    timeout: 10000

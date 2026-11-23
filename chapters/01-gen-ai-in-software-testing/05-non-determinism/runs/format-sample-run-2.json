@@ -1,6 +1,30 @@
 [
-  { "id": "1", "title": "Add task with valid title", "covers": ["AC1"] },
-  { "id": "2", "title": "Reject title over maximum length", "covers": ["AC3"] },
-  { "id": "3", "title": "Description longer than 1000 characters", "covers": ["AC4"] },
-  { "id": "4", "title": "Request without token", "covers": ["AC8"] }
+  {
+    "id": "1",
+    "title": "Add task with valid title",
+    "covers": [
+      "AC1"
+    ]
+  },
+  {
+    "id": "2",
+    "title": "Edit a task title",
+    "covers": [
+      "AC5"
+    ]
+  },
+  {
+    "id": "3",
+    "title": "Delete a task",
+    "covers": [
+      "AC6"
+    ]
+  },
+  {
+    "id": "4",
+    "title": "Task still there after restart",
+    "covers": [
+      "AC8"
+    ]
+  }
 ]

@@ -1,0 +1,12 @@
+# Evidence first: screenshots of the real screens, used to correct labels.env (exercise 04).
+# Relies on only two labels: TEST_LIST and LABEL_ADD_TASK.
+appId: ${APP_ID}
+tags: [capture]
+---
+- launchApp
+- runFlow: subflows/login.yaml
+- takeScreenshot: captures/01-lists-overview
+- tapOn: ${TEST_LIST}
+- takeScreenshot: captures/02-open-list
+- tapOn: ${LABEL_ADD_TASK}
+- takeScreenshot: captures/03-add-task

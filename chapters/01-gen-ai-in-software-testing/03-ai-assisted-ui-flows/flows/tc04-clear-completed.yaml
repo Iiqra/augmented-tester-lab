@@ -1,0 +1,22 @@
+# TC04 · AC4 · "Clear all completed" removes done tasks and keeps open ones.
+# STATUS: draft, not yet run on a device.
+appId: ${APP_ID}
+tags: [ch1, smoke]
+---
+- launchApp
+- runFlow: subflows/login.yaml
+- runFlow: subflows/open-test-list.yaml
+- runFlow:
+    file: subflows/add-task.yaml
+    env: { TASK: "Lab: done already" }
+- runFlow:
+    file: subflows/add-task.yaml
+    env: { TASK: "Lab: still open" }
+- tapOn:
+    leftOf: "Lab: done already"
+- tapOn: ${LABEL_CLEAR_DONE}
+- assertNotVisible: "Lab: done already"
+- assertVisible: "Lab: still open"
+- runFlow:
+    file: subflows/cleanup.yaml
+    env: { TASK: "Lab: still open" }

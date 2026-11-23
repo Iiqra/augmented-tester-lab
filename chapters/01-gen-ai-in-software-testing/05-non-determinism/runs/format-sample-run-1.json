@@ -1,6 +1,30 @@
 [
-  { "id": "1", "title": "Add task with valid title", "covers": ["AC1"] },
-  { "id": "2", "title": "Reject empty title", "covers": ["AC2"] },
-  { "id": "3", "title": "Mark task as done", "covers": ["AC5"] },
-  { "id": "4", "title": "Clear completed tasks", "covers": ["AC6"] }
+  {
+    "id": "1",
+    "title": "Add task with valid title",
+    "covers": [
+      "AC1"
+    ]
+  },
+  {
+    "id": "2",
+    "title": "Reject empty title",
+    "covers": [
+      "AC2"
+    ]
+  },
+  {
+    "id": "3",
+    "title": "Mark task as done",
+    "covers": [
+      "AC3"
+    ]
+  },
+  {
+    "id": "4",
+    "title": "Clear completed tasks",
+    "covers": [
+      "AC4"
+    ]
+  }
 ]

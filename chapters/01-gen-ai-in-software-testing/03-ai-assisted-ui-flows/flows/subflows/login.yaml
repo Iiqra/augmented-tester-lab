@@ -1,0 +1,16 @@
+# Logs in only when the login screen is showing. Credentials come from .env.
+appId: ${APP_ID}
+---
+- runFlow:
+    when:
+      visible: ${LABEL_LOGIN_SUBMIT}
+    commands:
+      - tapOn: ${LABEL_LOGIN_EMAIL}
+      - inputText: ${TWODOS_EMAIL}
+      - tapOn: ${LABEL_LOGIN_PASSWORD}
+      - inputText: ${TWODOS_PASSWORD}
+      - hideKeyboard
+      - tapOn: ${LABEL_LOGIN_SUBMIT}
+- extendedWaitUntil:
+    visible: ${TEST_LIST}
+    timeout: 15000

@@ -1,0 +1,24 @@
+# TC03 · AC3 · A task can be marked done and marked not done again.
+# STATUS: draft, not yet run on a device. Checkbox position is an ASSUMPTION (left of the title).
+appId: ${APP_ID}
+tags: [ch1]
+---
+- launchApp
+- runFlow: subflows/login.yaml
+- runFlow: subflows/open-test-list.yaml
+- runFlow:
+    file: subflows/add-task.yaml
+    env: { TASK: "Lab: call landlord" }
+- tapOn:
+    leftOf: "Lab: call landlord"
+- assertVisible:
+    leftOf: "Lab: call landlord"
+    checked: true
+- tapOn:
+    leftOf: "Lab: call landlord"
+- assertVisible:
+    leftOf: "Lab: call landlord"
+    checked: false
+- runFlow:
+    file: subflows/cleanup.yaml
+    env: { TASK: "Lab: call landlord" }

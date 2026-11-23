@@ -1,0 +1,18 @@
+# TC08 · AC8 · A new task is still there after the app is closed and reopened.
+# STATUS: draft, not yet run on a device.
+appId: ${APP_ID}
+tags: [ch1]
+---
+- launchApp
+- runFlow: subflows/login.yaml
+- runFlow: subflows/open-test-list.yaml
+- runFlow:
+    file: subflows/add-task.yaml
+    env: { TASK: "Lab: survives restart" }
+- stopApp
+- launchApp
+- runFlow: subflows/open-test-list.yaml
+- assertVisible: "Lab: survives restart"
+- runFlow:
+    file: subflows/cleanup.yaml
+    env: { TASK: "Lab: survives restart" }

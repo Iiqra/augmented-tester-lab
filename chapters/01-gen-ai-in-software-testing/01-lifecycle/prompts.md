@@ -7,11 +7,11 @@ Shared context block (paste above every prompt):
 
 ```text
 Product: twodos, a shared to-do app for exactly two people per list.
-Platforms: iOS/iPadOS/macOS, Android, Windows (Flutter). No web app yet.
-Backend: REST API with an OpenAPI spec, Socket.IO for real-time list events.
+Platforms today: iOS and Android apps (Flutter). No web app and no public API yet.
 Key features: lists, tasks, groups, one partner per list (invite by email or @username),
-alarms (just you / partner / both), location triggers, presence and typing indicators.
-Free limits: 50 lists, 200 tasks per list, 5 signed-in devices.
+alarms (just you / partner / both), location triggers, presence and typing indicators,
+"Clear all completed".
+Free plan limits: 50 lists, 200 tasks per list.
 Team: one developer who is also the QA engineer.
 ```
 
@@ -37,8 +37,8 @@ charters (goal, area, risks to look for) and the test data I need to prepare.
 ```
 
 ## Stage 4 · Implementation complete: run and report
-Book example: AI agents run test cases by controlling the browser. twodos has no web app,
-so this stage is practised through the API in [03-ai-assisted-api-tests](../03-ai-assisted-api-tests/).
+Book example: AI agents run test cases by controlling the browser. For twodos the agent drives the
+iOS simulator through Maestro instead. See [03-ai-assisted-ui-flows](../03-ai-assisted-ui-flows/).
 
 ## Stage 5 · Release: regression candidates
 ```text

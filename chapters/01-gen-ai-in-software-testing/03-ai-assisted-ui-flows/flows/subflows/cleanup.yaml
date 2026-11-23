@@ -1,0 +1,10 @@
+# Marks the given lab task done and clears completed tasks, so every flow leaves the list as it found it.
+appId: ${APP_ID}
+---
+- runFlow:
+    when:
+      visible: ${TASK}
+    commands:
+      - tapOn:
+          leftOf: ${TASK}     # ASSUMPTION: the done checkbox sits left of the title
+      - tapOn: ${LABEL_CLEAR_DONE}

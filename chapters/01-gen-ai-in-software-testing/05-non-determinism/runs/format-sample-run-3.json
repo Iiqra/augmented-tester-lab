@@ -1,6 +1,30 @@
 [
-  { "id": "1", "title": "Add task with valid title", "covers": ["AC1"] },
-  { "id": "2", "title": "Reject empty title", "covers": ["AC2"] },
-  { "id": "3", "title": "Undo a completed task", "covers": ["AC5"] },
-  { "id": "4", "title": "Share list via QR code", "covers": ["AC9"] }
+  {
+    "id": "1",
+    "title": "Add task with valid title",
+    "covers": [
+      "AC1"
+    ]
+  },
+  {
+    "id": "2",
+    "title": "Reject empty title",
+    "covers": [
+      "AC2"
+    ]
+  },
+  {
+    "id": "3",
+    "title": "Undo a completed task",
+    "covers": [
+      "AC3"
+    ]
+  },
+  {
+    "id": "4",
+    "title": "Share list via QR code",
+    "covers": [
+      "AC9"
+    ]
+  }
 ]

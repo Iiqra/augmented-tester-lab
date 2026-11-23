@@ -1,0 +1,13 @@
+# TC02 · AC2 · An empty task cannot be added.
+# OPEN QUESTION: does twodos disable the save button, or show a message? This flow assumes a disabled button.
+# STATUS: draft, not yet run on a device.
+appId: ${APP_ID}
+tags: [ch1]
+---
+- launchApp
+- runFlow: subflows/login.yaml
+- runFlow: subflows/open-test-list.yaml
+- tapOn: ${LABEL_ADD_TASK}
+- assertVisible:
+    text: ${LABEL_SAVE_TASK}
+    enabled: false

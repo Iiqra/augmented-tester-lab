@@ -1,13 +1,14 @@
 name: lab
 on: [push, pull_request]
 jobs:
-  chapter-1:
+  tooling:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with: { node-version: 20, cache: npm }
       - run: npm ci
+      - run: npm test
       - run: npm run ch1:coverage
-      - run: npm run ch1:check-endpoints
-      - run: npm run test:mock
+  # UI flows need an iOS simulator with the twodos build installed.
+  # Run them locally with `npm run flows` (see docs/setup-ios.md).

@@ -4,22 +4,25 @@
 **I want** to add tasks to a list and mark them done
 **so that** my partner and I can see what is left to do.
 
+Platform for chapter 1: the twodos **iOS app** (iPhone simulator).
+
 ## Acceptance criteria
 
 | ID | Criterion | Source |
 |---|---|---|
-| AC1 | A task with a valid title can be added to a list I belong to | OpenAPI `POST /api/todos/{todoId}` |
-| AC2 | A task without a title is rejected (`MISSING_FIELD`) | OpenAPI error examples |
-| AC3 | A title longer than the maximum is rejected (`VALIDATION_ERROR`) | OpenAPI schema + example (see open question) |
-| AC4 | A description is optional and at most 1000 characters | OpenAPI schema |
-| AC5 | A task can be marked done and marked not done again | OpenAPI `PATCH .../done` |
-| AC6 | "Clear all completed" removes done tasks and keeps open ones | OpenAPI `PUT /api/todos/clear-done/{todoId}` |
-| AC7 | A list cannot exceed the tasks-per-list limit (`ITEM_LIMIT_REACHED`) | OpenAPI + client-config `limits.itemsPerList` |
-| AC8 | Requests without a valid token are rejected (`UNAUTHORIZED`) | OpenAPI security scheme |
+| AC1 | A task with a title can be added to a list I belong to and appears in the list | Product behaviour |
+| AC2 | An empty task cannot be added | Product behaviour (see open questions) |
+| AC3 | A task can be marked done and marked not done again | Product behaviour |
+| AC4 | "Clear all completed" removes done tasks and keeps open ones | twodos.app feature list |
+| AC5 | A task title can be edited | twodos.app feature list |
+| AC6 | A task can be deleted | twodos.app feature list |
+| AC7 | A list holds at most 200 tasks on the free plan | twodos.app FAQ |
+| AC8 | A new task is still there after the app is closed and reopened | Product behaviour |
 
-## Open question found during requirement review
+## Open questions (requirement review)
 
-The spec's task schema says `title` max **255**, but its own validation example says
-"must be **250** characters or fewer". Which one does production enforce?
-Titles of 251 to 255 characters are the gap. This is exactly the kind of ambiguity
-an AI review (exercise 01, stage 2) should flag and a human must resolve with the owner.
+1. AC2: is the save button disabled for an empty title, or is a message shown? The automated flow assumes a disabled button until confirmed.
+2. AC7: what does the user see when adding task 201?
+3. Is there a maximum title length in the app?
+
+Questions like these are exactly what the requirement-review prompt in exercise 01 should surface, and what a person has to resolve with the product owner.
